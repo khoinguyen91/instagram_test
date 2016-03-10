@@ -1,0 +1,13 @@
+%h1
+	adfg
+
+- @food_items.each do |food_item|
+	.col-xs-6
+		.card.card-inverse
+			%img.card-img{:alt => "Food Image", "src" => "#{food_item.image_url}", :width => "100%"}
+			.card-img-overlay
+				%h4.card-title 
+				= link_to food_item.name, food_item
+				%p.card-text #{food_item.description}
+				%p.card-text VND #{food_item.price}
+				= link_to "Order", menu_index_path, class: 'btn btn-success'
